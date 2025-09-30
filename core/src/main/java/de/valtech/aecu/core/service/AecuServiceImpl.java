@@ -217,7 +217,7 @@ public class AecuServiceImpl implements AecuService {
             }
         }
         Map<String, String> properties = new HashMap<>();
-        properties.put("path", path);
+        properties.put("aecuScriptPath", path);
         ScriptContext scriptContext = new AecuScriptContext(loadScript(path, resolver), resolver, updateData(data, properties));
         RunScriptResponse response = groovyConsoleService.runScript(scriptContext);
         boolean success = StringUtils.isBlank(response.getExceptionStackTrace());
